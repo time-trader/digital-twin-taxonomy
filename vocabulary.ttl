@@ -1,0 +1,287 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ditta: <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.rtdt.ai/ontologies/digital-twin-taxonomy/> a skos:ConceptScheme;
+  dct:contributor <https://orcid.org/0000-0002-6570-6966>;
+  dct:creator <https://orcid.org/0000-0002-6570-6966>;
+  dct:description "A taxonomical organization of digital twin system concepts and digital twin types"@en;
+  dct:title "Digital Twin Taxonomy"@en;
+  pav:createdOn "2020-12-01T00:00:00+01:00"@en;
+  pav:lastUpdatedOn "2020-12-01T00:00:00+01:00"@en;
+  pav:version "0.0.1"@en;
+  skos:hasTopConcept ditta:DigitalTwinConceptualModel, ditta:DigitalTwinSystem, ditta:DigitalTwinType;
+  skos:prefLabel "Digital Twin Taxonomy"@en .
+
+ditta:DigitalTwinConceptualModel a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.12688/digitaltwin.17574.1>;
+  dct:creator <https://orcid.org/0000-0003-0322-343X>;
+  skos:altLabel "Digital Twin Model"@en;
+  skos:definition "The Digital Twin Model is a conceptual model that consists of three main elements: an actual or intended physical element that currently exists or will exist in the physical world (the “Physical Twin”), the virtual or digital counterpart that exists in the virtual or digital world (“the Digital Twin”), and the communication channel of data and information between these two elements (the “Digital Thread”). It is based on two fundamental principles: \"duality\" (Physical and Digital) and \"strong similiratiy\" (communication channel between the two)."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Digital Twin Conceptual Model"@en;
+  skos:topConceptOf <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/> .
+
+ditta:DigitalTwinSystem a skos:Concept;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:ConnectionSystem, ditta:DigitalSystem, ditta:PhysicalSystem;
+  skos:prefLabel "Digital Twin System"@en;
+  skos:topConceptOf <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/> .
+
+ditta:DigitalTwinType a skos:Concept;
+  dct:creator <https://orcid.org/0000-0002-6570-6966>;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:ConnectionSystemAutomation, ditta:ModelFidelity, ditta:PhysicalSystemLifetimeStage,
+    ditta:SystemFunctionality;
+  skos:prefLabel "Digital Twin Type"@en;
+  skos:topConceptOf <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/> .
+
+ditta:PhysicalSystem a skos:Concept;
+  dct:creator <https://orcid.org/0000-0003-0322-343X>;
+  skos:altLabel "Physical Asset"@en, "Physical Entity"@en, "Physical Twin"@en;
+  skos:broader ditta:DigitalTwinSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Physical System"@en .
+
+ditta:DigitalSystem a skos:Concept;
+  dct:creator <https://orcid.org/0000-0003-0322-343X>;
+  skos:altLabel "Digtial Twin"@en;
+  skos:broader ditta:DigitalTwinSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:DataSystem, ditta:ModelSystem, ditta:ServiceSystem;
+  skos:prefLabel "Digital System"@en .
+
+ditta:ConnectionSystem a skos:Concept;
+  dct:creator <https://orcid.org/0000-0003-0322-343X>;
+  skos:altLabel "Digital Thread"@en;
+  skos:broader ditta:DigitalTwinSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Connection System"@en .
+
+ditta:ModelSystem a skos:Concept;
+  skos:altLabel "Virtual Entity"@en;
+  skos:broader ditta:DigitalSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Model System"@en .
+
+ditta:ServiceSystem a skos:Concept;
+  skos:broader ditta:DigitalSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Service System"@en .
+
+ditta:DataSystem a skos:Concept;
+  skos:broader ditta:DigitalSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Data System"@en .
+
+ditta:SystemFunctionality a skos:Concept;
+  skos:broader ditta:DigitalTwinType;
+  skos:definition "Classification based on Digital Twin System functional capability"@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:CognitiveDigitalTwin, ditta:IntelligentDigitalTwin, ditta:L1DescriptiveDigitalTwin,
+    ditta:SupervisoryDigitalTwin;
+  skos:prefLabel "System Functionality"@en .
+
+ditta:SupervisoryDigitalTwin a skos:Concept;
+  skos:broader ditta:SystemFunctionality;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:OperationalDigitalTwin;
+  skos:prefLabel "Supervisory Digital Twin"@en .
+
+ditta:OperationalDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
+  dct:creator <https://orcid.org/0000-0002-7266-2105>;
+  skos:broader ditta:SupervisoryDigitalTwin;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:Simulation-PredictionDigitalTwin;
+  skos:prefLabel "Operational Digital Twin"@en .
+
+ditta:Simulation-PredictionDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
+  dct:creator <https://orcid.org/0000-0002-7266-2105>;
+  skos:broader ditta:OperationalDigitalTwin;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:Intellegent-LearningDigitalTwin;
+  skos:prefLabel "Simulation - Prediction Digital Twin"@en .
+
+ditta:Intellegent-LearningDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
+  dct:creator <https://orcid.org/0000-0002-7266-2105>;
+  skos:altLabel "Data-Driven Digital Twin"@en;
+  skos:broader ditta:Simulation-PredictionDigitalTwin;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:AutonomousDigitalTwin;
+  skos:prefLabel "Intellegent - Learning Digital Twin"@en .
+
+ditta:AutonomousDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
+  dct:creator <https://orcid.org/0000-0002-7266-2105>;
+  skos:broader ditta:Intellegent-LearningDigitalTwin;
+  skos:closeMatch ditta:CognitiveDigitalTwin, ditta:L4LivingDigitalTwin;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Autonomous Digital Twin"@en .
+
+ditta:CognitiveDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1080/00207543.2021.2014591>;
+  dct:creator <https://orcid.org/0000-0001-5044-2921>, <https://orcid.org/0000-0003-3660-9187>;
+  dct:references <https://doi.org/10.1007/978-3-030-19651-6_3>;
+  skos:broader ditta:SystemFunctionality;
+  skos:closeMatch ditta:AutonomousDigitalTwin, ditta:L4LivingDigitalTwin;
+  skos:definition "DTs with augmented semantic capabilities for identifying the dynamics of virtual model evolution, promoting the understanding of interrelationships between virtual models and enhancing the decision-making"@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Cognitive Digital Twin"@en .
+
+ditta:L1DescriptiveDigitalTwin a skos:Concept;
+  skos:broader ditta:SystemFunctionality;
+  skos:closeMatch ditta:SupervisoryDigitalTwin;
+  skos:definition "An L1 Digital Twin focuses on describing the physical system and includes content ranging from the initial business case analysis and product requirements to the detailed engineering design and 3D visualizations. The intent of an L1 Digital Twin is to describe the structure so that the user can understand the components and the relationship between those components that make up the physical system."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:L2InformativeDigitalTwin;
+  skos:prefLabel "L1 Descriptive Digital Twin"@en .
+
+ditta:L2InformativeDigitalTwin a skos:Concept;
+  skos:broader ditta:L1DescriptiveDigitalTwin;
+  skos:closeMatch ditta:OperationalDigitalTwin;
+  skos:definition "An L2 Digital Twin focuses on describing the state of a physical system by connecting to data streams from the physical system (either directly or via intermediary data storage systems) so that a user can visualize what is presently happening with the system."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:L3PredictiveDigitalTwin;
+  skos:prefLabel "L2 Informative Digital Twin"@en .
+
+ditta:L3PredictiveDigitalTwin a skos:Concept;
+  skos:broader ditta:L2InformativeDigitalTwin;
+  skos:closeMatch ditta:Simulation-PredictionDigitalTwin;
+  skos:definition "An L3 Digital Twin focuses on modeling the behavior of the physical system to make predictions of unmeasured quantities or future states under continued operations with the assumption that future behavior is the same as the past."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:L4LivingDigitalTwin;
+  skos:prefLabel "L3 Predictive Digital Twin"@en .
+
+ditta:L4LivingDigitalTwin a skos:Concept;
+  skos:broader ditta:L3PredictiveDigitalTwin;
+  skos:closeMatch ditta:AutonomousDigitalTwin, ditta:CognitiveDigitalTwin, ditta:Intellegent-LearningDigitalTwin;
+  skos:definition "An L4 Living Digital Twin focuses on modeling the behavior of the physical system as it changes over time by using real-world data to update the model parameters."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "L4 Living Digital Twin"@en .
+
+ditta:IntelligentDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.12688/digitaltwin.17574.1>;
+  dct:creator <https://orcid.org/0000-0003-0322-343X>;
+  skos:broader ditta:SystemFunctionality;
+  skos:closeMatch ditta:Intellegent-LearningDigitalTwin;
+  skos:definition "The Intelligent Digital Twin is active, online, goal seeking, and anticipatory."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Intelligent Digital Twin"@en .
+
+ditta:ConnectionSystemAutomation a skos:Concept;
+  skos:altLabel "Sub-systems Levels of Integration"@en;
+  skos:broader ditta:DigitalTwinType;
+  skos:definition "Classification based on Connection System automation levels"@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:ManuallyCoupledDigitalTwin;
+  skos:prefLabel "Connection System Automation"@en;
+  skos:related ditta:ConnectionSystem .
+
+ditta:ManuallyCoupledDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/j.ifacol.2018.08.474>;
+  dct:contributor <https://orcid.org/0000-0002-6570-6966>;
+  dct:creator <https://www.scopus.com/authid/detail.uri?authorId=57202854785>;
+  skos:altLabel "Digital Model"@en;
+  skos:broader ditta:ConnectionSystemAutomation;
+  skos:definition "A Manually Coupled Digital Twin is a digital representation of an existing or planned physical object that does not use any form of automated data exchange between the physical object and the digital objet. The data exchange is done in a manual way."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:DigitalShadow;
+  skos:note "Kritzinger et al.(2018) refers to this type as a Digital Model, which is ambiguous."@en;
+  skos:prefLabel "Manually Coupled Digital Twin"@en .
+
+ditta:DigitalShadow a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/j.ifacol.2018.08.474>;
+  dct:contributor <https://orcid.org/0000-0002-6570-6966>;
+  dct:creator <https://www.scopus.com/authid/detail.uri?authorId=57202854785>;
+  dct:references <https://doi.org/10.12688/digitaltwin.17574.1>;
+  skos:altLabel "Digital Shadow"@en;
+  skos:broader ditta:ManuallyCoupledDigitalTwin;
+  skos:definition "A Digital Shadow is a digital representation of an existing or planned physical object with an automated one-way data flow between a physical object and a digital object."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:FullyCoupledDigitalTwin;
+  skos:note "As opposed to Kritzinger et al.(2018), this definition does not state that the physical object should exist. See: Grieves, M.: Intelligent digital twins and the development and management of complex systems, 2022."@en;
+  skos:prefLabel "Digital Shadow"@en .
+
+ditta:FullyCoupledDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/j.ifacol.2018.08.474>;
+  dct:contributor <https://orcid.org/0000-0002-6570-6966>;
+  dct:creator <https://www.scopus.com/authid/detail.uri?authorId=57202854785>;
+  dct:references <https://doi.org/10.12688/digitaltwin.17574.1>;
+  skos:altLabel "Digital Twin"@en;
+  skos:broader ditta:DigitalShadow;
+  skos:definition "In cases when the data flows between a physical object and a digital object are fully integrated in both directions, one might refer to it as Fully Coupled Digital Twin. In such a combination, the digital object might also act as controlling instance of the physical object."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:note "Kritzinger et al.(2018) refers to this type simply as a Digital Twin. However, a lower level of sub-systems integration do not preclude a system from being considered as a Digital Twin. See: Grieves, M.: Intelligent digital twins and the development and management of complex systems, 2022."@en;
+  skos:prefLabel "Fully Coupled Digital Twin"@en .
+
+ditta:ModelFidelity a skos:Concept;
+  skos:broader ditta:DigitalTwinType;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:HighFidelityDigitalTwin, ditta:LowFidelityDigitalTwin, ditta:Multi-FidelityDigitalTwin;
+  skos:prefLabel "Model Fidelity"@en;
+  skos:related ditta:ModelSystem .
+
+ditta:LowFidelityDigitalTwin a skos:Concept;
+  skos:broader ditta:ModelFidelity;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Low Fidelity Digital Twin"@en .
+
+ditta:HighFidelityDigitalTwin a skos:Concept;
+  skos:broader ditta:ModelFidelity;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "High Fidelity Digital Twin"@en .
+
+ditta:Multi-FidelityDigitalTwin a skos:Concept;
+  skos:broader ditta:ModelFidelity;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Multi-Fidelity Digital Twin"@en .
+
+ditta:PhysicalSystemLifetimeStage a skos:Concept;
+  skos:broader ditta:DigitalTwinType;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:DigitalTwinAggregate, ditta:DigitalTwinInstance, ditta:DigitalTwinPrototype;
+  skos:prefLabel "Physical System Lifetime Stage"@en;
+  skos:related ditta:PhysicalSystem .
+
+ditta:DigitalTwinPrototype a skos:Concept;
+  dct:bibliographicCitation <http://doi.org/10.1007/978-3-319-3>;
+  dct:creator <https://orcid.org/0000-0003-0322-343X>;
+  skos:broader ditta:PhysicalSystemLifetimeStage;
+  skos:definition "Digital Twin Prototype, the prototypical product with variants or all the products that can be built. This type of Digital Twin describes the prototypical physical artifact. It contains the informational sets necessary to describe and produce a physical version that duplicates or twins the virtual version."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Digital Twin Prototype"@en .
+
+ditta:DigitalTwinInstance a skos:Concept;
+  dct:bibliographicCitation <http://doi.org/10.1007/978-3-319-3>;
+  dct:creator <https://orcid.org/0000-0003-0322-343X>;
+  skos:broader ditta:PhysicalSystemLifetimeStage;
+  skos:definition "Digital Twin Instance, the individual products themselves or all the products that are built. This type of Digital Twin describes a specific corresponding physical product that an individual Digital Twin remains linked to throughout the life of that physical product."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Digital Twin Instance"@en .
+
+ditta:DigitalTwinAggregate a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.12688/digitaltwin.17574.1>;
+  dct:creator <https://orcid.org/0000-0003-0322-343X>;
+  skos:broader ditta:PhysicalSystemLifetimeStage;
+  skos:definition "Digital Twin Aggregate, the aggregation of all the DTIs or all the products that have been built."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Digital Twin Aggregate"@en .
