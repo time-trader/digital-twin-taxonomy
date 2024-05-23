@@ -263,7 +263,7 @@ ditta:PhysicalSystemLifetimeStage a skos:Concept;
   skos:related ditta:PhysicalSystem .
 
 ditta:DigitalTwinPrototype a skos:Concept;
-  dct:bibliographicCitation <http://doi.org/10.1007/978-3-319-3>;
+  dct:bibliographicCitation <https://doi.org/10.1007/978-3-319-38756-7_4>;
   dct:creator <https://orcid.org/0000-0003-0322-343X>;
   skos:broader ditta:PhysicalSystemLifetimeStage;
   skos:definition "Digital Twin Prototype, the prototypical product with variants or all the products that can be built. This type of Digital Twin describes the prototypical physical artifact. It contains the informational sets necessary to describe and produce a physical version that duplicates or twins the virtual version."@en;
@@ -271,7 +271,7 @@ ditta:DigitalTwinPrototype a skos:Concept;
   skos:prefLabel "Digital Twin Prototype"@en .
 
 ditta:DigitalTwinInstance a skos:Concept;
-  dct:bibliographicCitation <http://doi.org/10.1007/978-3-319-3>;
+  dct:bibliographicCitation <https://doi.org/10.1007/978-3-319-38756-7_4>;
   dct:creator <https://orcid.org/0000-0003-0322-343X>;
   skos:broader ditta:PhysicalSystemLifetimeStage;
   skos:definition "Digital Twin Instance, the individual products themselves or all the products that are built. This type of Digital Twin describes a specific corresponding physical product that an individual Digital Twin remains linked to throughout the life of that physical product."@en;
