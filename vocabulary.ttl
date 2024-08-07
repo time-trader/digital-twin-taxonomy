@@ -25,7 +25,7 @@
   dct:title "Digital Twin Taxonomy"@en;
   pav:createdOn "2020-12-01T00:00:00+01:00"@en;
   pav:lastUpdatedOn "2020-12-01T00:00:00+01:00"@en;
-  pav:version "0.0.1"@en;
+  pav:version "0.0.2"@en;
   skos:hasTopConcept ditta:DigitalTwinConceptualModel, ditta:DigitalTwinSystem, ditta:DigitalTwinType;
   skos:prefLabel "Digital Twin Taxonomy"@en .
 
@@ -94,8 +94,8 @@ ditta:SystemFunctionality a skos:Concept;
   skos:broader ditta:DigitalTwinType;
   skos:definition "Classification based on Digital Twin System functional capability"@en;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
-  skos:narrower ditta:CognitiveDigitalTwin, ditta:IntelligentDigitalTwin, ditta:L1DescriptiveDigitalTwin,
-    ditta:SupervisoryDigitalTwin;
+  skos:narrower ditta:0-StandaloneDigitalTwin, ditta:CognitiveDigitalTwin, ditta:IntelligentDigitalTwin,
+    ditta:L1DescriptiveDigitalTwin, ditta:SupervisoryDigitalTwin;
   skos:prefLabel "System Functionality"@en .
 
 ditta:SupervisoryDigitalTwin a skos:Concept;
@@ -133,7 +133,8 @@ ditta:AutonomousDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:broader ditta:Intelligent-LearningDigitalTwin;
-  skos:closeMatch ditta:CognitiveDigitalTwin, ditta:L4LivingDigitalTwin;
+  skos:closeMatch ditta:CognitiveDigitalTwin;
+  skos:exactMatch ditta:5-AutonomousDigitalTwin;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:prefLabel "Autonomous Digital Twin"@en .
 
@@ -177,6 +178,65 @@ ditta:L4LivingDigitalTwin a skos:Concept;
   skos:definition "An L4 Living Digital Twin focuses on modeling the behavior of the physical system as it changes over time by using real-world data to update the model parameters."@en;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:prefLabel "L4 Living Digital Twin"@en .
+
+ditta:0-StandaloneDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
+  dct:creator <https://orcid.org/0009-0003-5155-0870>;
+  skos:broader ditta:SystemFunctionality;
+  skos:definition "A standalone DT is defined as a DT even before the physical asset comes into existence. The value of a standalone DT, in addition to being used for design purposes, is that it can be used for a preliminary cost-benefit analysis of the asset before it is built."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:1-DescriptiveDigitalTwin;
+  skos:prefLabel "Standalone Digital Twin"@en .
+
+ditta:1-DescriptiveDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
+  dct:creator <https://orcid.org/0009-0003-5155-0870>;
+  skos:broader ditta:0-StandaloneDigitalTwin;
+  skos:closeMatch ditta:L1DescriptiveDigitalTwin, ditta:SupervisoryDigitalTwin;
+  skos:definition "When geometric computer-aided design (CAD) models are in place and a live sensor data stream is established, it can be referred to as the descriptive DT, which can provide insight into the inner workings of the asset at the required granularity. A descriptive DT mirrors the physical asset’s current state and can be easily explored remotely."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:2-DiagnosticDigitalTwin;
+  skos:prefLabel "Descriptive Digital Twin"@en .
+
+ditta:2-DiagnosticDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
+  dct:creator <https://orcid.org/0009-0003-5155-0870>;
+  skos:broader ditta:1-DescriptiveDigitalTwin;
+  skos:closeMatch ditta:L2InformativeDigitalTwin, ditta:OperationalDigitalTwin;
+  skos:definition "At a capability level of 2, data analysis tools are applied to the data for sanity-checks of sensors and data, condition monitoring and fault diagnosis. The DT is referred to as the diagnostic DT."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:3-PredictiveDigitalTwin;
+  skos:prefLabel "Diagnostic Digital Twin"@en .
+
+ditta:3-PredictiveDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
+  dct:creator <https://orcid.org/0009-0003-5155-0870>;
+  skos:broader ditta:2-DiagnosticDigitalTwin;
+  skos:closeMatch ditta:L3PredictiveDigitalTwin, ditta:Simulation-PredictionDigitalTwin;
+  skos:definition "Predictive DT, as the name suggests, starts exploiting models to project the current and past states into the future. The prediction is continuously updated based on the real-time data stream from the physical asset. With the constant update of the asset state, there is no risk of diverging too far from the physical asset over time."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:4-PrescriptiveDigitalTwin;
+  skos:prefLabel "Predictive Digital Twin"@en .
+
+ditta:4-PrescriptiveDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
+  dct:creator <https://orcid.org/0009-0003-5155-0870>;
+  skos:broader ditta:3-PredictiveDigitalTwin;
+  skos:closeMatch ditta:Intelligent-LearningDigitalTwin, ditta:L4LivingDigitalTwin;
+  skos:definition "Prescriptive DTs [...] can make recommendations based on what-if? / risk assessment and uncertainty quantification. This aspect is highly desirable for decision support systems, providing recommendations to experts who then decide how to act upon them."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:5-AutonomousDigitalTwin;
+  skos:prefLabel "Prescriptive Digital Twin"@en .
+
+ditta:5-AutonomousDigitalTwin a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
+  dct:creator <https://orcid.org/0009-0003-5155-0870>;
+  skos:broader ditta:4-PrescriptiveDigitalTwin;
+  skos:closeMatch ditta:CognitiveDigitalTwin;
+  skos:definition "The DT and the digital asset start bidirectional communication where the physical asset updates its DT in real-time, and in return, the DT controls the asset to push it towards an optimal set point. Decisions can be made on much shorter timescales than with human involvement. This autonomous DT represents the fifth level."@en;
+  skos:exactMatch ditta:AutonomousDigitalTwin;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Autonomous Digital Twin"@en .
 
 ditta:IntelligentDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.12688/digitaltwin.17574.1>;
