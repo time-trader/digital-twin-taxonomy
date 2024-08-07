@@ -183,6 +183,7 @@ ditta:0-StandaloneDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
   dct:creator <https://orcid.org/0009-0003-5155-0870>;
   skos:broader ditta:SystemFunctionality;
+  skos:closeMatch ditta:DigitalTwinPrototype;
   skos:definition "A standalone DT is defined as a DT even before the physical asset comes into existence. The value of a standalone DT, in addition to being used for design purposes, is that it can be used for a preliminary cost-benefit analysis of the asset before it is built."@en;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:narrower ditta:1-DescriptiveDigitalTwin;
