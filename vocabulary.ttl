@@ -100,6 +100,7 @@ ditta:SystemFunctionality a skos:Concept;
 
 ditta:SupervisoryDigitalTwin a skos:Concept;
   skos:broader ditta:SystemFunctionality;
+  skos:closeMatch ditta:1-DescriptiveDigitalTwin, ditta:L1DescriptiveDigitalTwin;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:narrower ditta:OperationalDigitalTwin;
   skos:prefLabel "Supervisory Digital Twin"@en .
@@ -108,6 +109,7 @@ ditta:OperationalDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:broader ditta:SupervisoryDigitalTwin;
+  skos:closeMatch ditta:2-DiagnosticDigitalTwin, ditta:L2InformativeDigitalTwin;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:narrower ditta:Simulation-PredictionDigitalTwin;
   skos:prefLabel "Operational Digital Twin"@en .
@@ -116,6 +118,7 @@ ditta:Simulation-PredictionDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:broader ditta:OperationalDigitalTwin;
+  skos:closeMatch ditta:3-PredictiveDigitalTwin, ditta:L3PredictiveDigitalTwin;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:narrower ditta:Intelligent-LearningDigitalTwin;
   skos:prefLabel "Simulation - Prediction Digital Twin"@en .
@@ -125,6 +128,7 @@ ditta:Intelligent-LearningDigitalTwin a skos:Concept;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:altLabel "Data-Driven Digital Twin"@en;
   skos:broader ditta:Simulation-PredictionDigitalTwin;
+  skos:closeMatch ditta:4-PrescriptiveDigitalTwin, ditta:IntelligentDigitalTwin, ditta:L4LivingDigitalTwin;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:narrower ditta:AutonomousDigitalTwin;
   skos:prefLabel "Intelligent - Learning Digital Twin"@en .
@@ -133,7 +137,7 @@ ditta:AutonomousDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:broader ditta:Intelligent-LearningDigitalTwin;
-  skos:closeMatch ditta:CognitiveDigitalTwin;
+  skos:closeMatch ditta:CognitiveDigitalTwin, ditta:IntelligentDigitalTwin, ditta:L4LivingDigitalTwin;
   skos:exactMatch ditta:5-AutonomousDigitalTwin;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:prefLabel "Autonomous Digital Twin"@en .
@@ -174,7 +178,8 @@ ditta:L3PredictiveDigitalTwin a skos:Concept;
 
 ditta:L4LivingDigitalTwin a skos:Concept;
   skos:broader ditta:L3PredictiveDigitalTwin;
-  skos:closeMatch ditta:AutonomousDigitalTwin, ditta:CognitiveDigitalTwin, ditta:Intelligent-LearningDigitalTwin;
+  skos:closeMatch ditta:5-AutonomousDigitalTwin, ditta:AutonomousDigitalTwin, ditta:CognitiveDigitalTwin,
+    ditta:Intelligent-LearningDigitalTwin, ditta:IntelligentDigitalTwin;
   skos:definition "An L4 Living Digital Twin focuses on modeling the behavior of the physical system as it changes over time by using real-world data to update the model parameters."@en;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:prefLabel "L4 Living Digital Twin"@en .
@@ -223,7 +228,8 @@ ditta:4-PrescriptiveDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
   dct:creator <https://orcid.org/0009-0003-5155-0870>;
   skos:broader ditta:3-PredictiveDigitalTwin;
-  skos:closeMatch ditta:Intelligent-LearningDigitalTwin, ditta:L4LivingDigitalTwin;
+  skos:closeMatch ditta:Intelligent-LearningDigitalTwin, ditta:IntelligentDigitalTwin,
+    ditta:L4LivingDigitalTwin;
   skos:definition "Prescriptive DTs [...] can make recommendations based on what-if? / risk assessment and uncertainty quantification. This aspect is highly desirable for decision support systems, providing recommendations to experts who then decide how to act upon them."@en;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:narrower ditta:5-AutonomousDigitalTwin;
@@ -233,7 +239,7 @@ ditta:5-AutonomousDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
   dct:creator <https://orcid.org/0009-0003-5155-0870>;
   skos:broader ditta:4-PrescriptiveDigitalTwin;
-  skos:closeMatch ditta:CognitiveDigitalTwin;
+  skos:closeMatch ditta:CognitiveDigitalTwin, ditta:IntelligentDigitalTwin, ditta:L4LivingDigitalTwin;
   skos:definition "The DT and the digital asset start bidirectional communication where the physical asset updates its DT in real-time, and in return, the DT controls the asset to push it towards an optimal set point. Decisions can be made on much shorter timescales than with human involvement. This autonomous DT represents the fifth level."@en;
   skos:exactMatch ditta:AutonomousDigitalTwin;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
@@ -243,7 +249,8 @@ ditta:IntelligentDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.12688/digitaltwin.17574.1>;
   dct:creator <https://orcid.org/0000-0003-0322-343X>;
   skos:broader ditta:SystemFunctionality;
-  skos:closeMatch ditta:Intelligent-LearningDigitalTwin;
+  skos:closeMatch ditta:4-PrescriptiveDigitalTwin, ditta:5-AutonomousDigitalTwin, ditta:AutonomousDigitalTwin,
+    ditta:Intelligent-LearningDigitalTwin, ditta:L4LivingDigitalTwin;
   skos:definition "The Intelligent Digital Twin is active, online, goal seeking, and anticipatory."@en;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:prefLabel "Intelligent Digital Twin"@en .
