@@ -25,8 +25,8 @@
   dct:title "Digital Twin Taxonomy"@en;
   pav:createdOn "2020-12-01T00:00:00+01:00"@en;
   pav:lastUpdatedOn "2020-12-01T00:00:00+01:00"@en;
-  pav:version "0.0.2"@en;
-  skos:hasTopConcept ditta:DigitalTwinConceptualModel, ditta:DigitalTwinSystem, ditta:DigitalTwinType;
+  pav:version "0.0.3"@en;
+  skos:hasTopConcept ditta:DigitalTwinConceptualModel, ditta:DigitalTwinType;
   skos:prefLabel "Digital Twin Taxonomy"@en .
 
 ditta:DigitalTwinConceptualModel a skos:Concept;
@@ -35,13 +35,8 @@ ditta:DigitalTwinConceptualModel a skos:Concept;
   skos:altLabel "Digital Twin Model"@en;
   skos:definition "The Digital Twin Model is a conceptual model that consists of three main elements: an actual or intended physical element that currently exists or will exist in the physical world (the “Physical Twin”), the virtual or digital counterpart that exists in the virtual or digital world (“the Digital Twin”), and the communication channel of data and information between these two elements (the “Digital Thread”). It is based on two fundamental principles: \"duality\" (Physical and Digital) and \"strong similiratiy\" (communication channel between the two)."@en;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
-  skos:prefLabel "Digital Twin Conceptual Model"@en;
-  skos:topConceptOf <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/> .
-
-ditta:DigitalTwinSystem a skos:Concept;
-  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:narrower ditta:ConnectionSystem, ditta:DigitalSystem, ditta:PhysicalSystem;
-  skos:prefLabel "Digital Twin System"@en;
+  skos:prefLabel "Digital Twin Conceptual Model"@en;
   skos:topConceptOf <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/> .
 
 ditta:DigitalTwinType a skos:Concept;
@@ -55,14 +50,14 @@ ditta:DigitalTwinType a skos:Concept;
 ditta:PhysicalSystem a skos:Concept;
   dct:creator <https://orcid.org/0000-0003-0322-343X>;
   skos:altLabel "Physical Asset"@en, "Physical Entity"@en, "Physical Twin"@en;
-  skos:broader ditta:DigitalTwinSystem;
+  skos:broader ditta:DigitalTwinConceptualModel;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:prefLabel "Physical System"@en .
 
 ditta:DigitalSystem a skos:Concept;
   dct:creator <https://orcid.org/0000-0003-0322-343X>;
   skos:altLabel "Digtial Twin"@en;
-  skos:broader ditta:DigitalTwinSystem;
+  skos:broader ditta:DigitalTwinConceptualModel;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:narrower ditta:DataSystem, ditta:ModelSystem, ditta:ServiceSystem;
   skos:prefLabel "Digital System"@en .
@@ -70,7 +65,7 @@ ditta:DigitalSystem a skos:Concept;
 ditta:ConnectionSystem a skos:Concept;
   dct:creator <https://orcid.org/0000-0003-0322-343X>;
   skos:altLabel "Digital Thread"@en;
-  skos:broader ditta:DigitalTwinSystem;
+  skos:broader ditta:DigitalTwinConceptualModel;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:prefLabel "Connection System"@en .
 
