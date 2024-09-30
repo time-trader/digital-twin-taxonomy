@@ -6,7 +6,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pav: <http://purl.org/pav/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -22,10 +21,11 @@
   dct:contributor <https://orcid.org/0000-0002-6570-6966>;
   dct:creator <https://orcid.org/0000-0002-6570-6966>;
   dct:description "A taxonomical organization of digital twin system concepts and digital twin types"@en;
+  dct:hasVersion "0.0.4"@en;
+  dct:license <http://creativecommons.org/licenses/by/4.0/>;
+  dct:publisher "OST - Ostschweizer Fachhochschule"@en;
   dct:title "Digital Twin Taxonomy"@en;
-  pav:createdOn "2020-12-01T00:00:00+01:00"@en;
-  pav:lastUpdatedOn "2020-12-01T00:00:00+01:00"@en;
-  pav:version "0.0.3"@en;
+  owl:versionInfo "0.0.4"@en;
   skos:hasTopConcept ditta:DigitalTwinConceptualModel, ditta:DigitalTwinType;
   skos:prefLabel "Digital Twin Taxonomy"@en .
 
@@ -42,8 +42,8 @@ ditta:DigitalTwinConceptualModel a skos:Concept;
 ditta:DigitalTwinType a skos:Concept;
   dct:creator <https://orcid.org/0000-0002-6570-6966>;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
-  skos:narrower ditta:ConnectionSystemAutomation, ditta:ModelFidelity, ditta:PhysicalSystemLifetimeStage,
-    ditta:SystemFunctionality;
+  skos:narrower ditta:ConceptualModelDimensionality, ditta:ConnectionSystemAutomation,
+    ditta:ModelFidelity, ditta:PhysicalSystemLifetimeStage, ditta:SystemFunctionality;
   skos:prefLabel "Digital Twin Type"@en;
   skos:topConceptOf <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/> .
 
@@ -70,20 +70,58 @@ ditta:ConnectionSystem a skos:Concept;
   skos:prefLabel "Connection System"@en .
 
 ditta:ModelSystem a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/B978-0-12-817630-6.00003-5>;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
   skos:altLabel "Virtual Entity"@en;
   skos:broader ditta:DigitalSystem;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:BehaviourModel, ditta:GeometryModel, ditta:PhysicsModel, ditta:RuleModel;
+  skos:note "Tao et al. (2019) refer to this concept as Virtual Entity and consider this system to be on the same hierarchical level as physical system and connection system."@en;
   skos:prefLabel "Model System"@en .
 
 ditta:ServiceSystem a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/B978-0-12-817630-6.00003-5>;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
   skos:broader ditta:DigitalSystem;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:note "Tao et al. (2019) consider this system to be on the same hierarchical level as physical system and connection system."@en;
   skos:prefLabel "Service System"@en .
 
 ditta:DataSystem a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/B978-0-12-817630-6.00003-5>;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
   skos:broader ditta:DigitalSystem;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:note "Tao et al. (2019) consider this system to be on the same hierarchical level as physical system and connection system."@en;
   skos:prefLabel "Data System"@en .
+
+ditta:GeometryModel a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/B978-0-12-817630-6.00003-5>;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
+  skos:broader ditta:ModelSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Geometry Model"@en .
+
+ditta:PhysicsModel a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/B978-0-12-817630-6.00003-5>;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
+  skos:broader ditta:ModelSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Physics Model"@en .
+
+ditta:BehaviourModel a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/B978-0-12-817630-6.00003-5>;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
+  skos:broader ditta:ModelSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Behaviour Model"@en .
+
+ditta:RuleModel a skos:Concept;
+  dct:bibliographicCitation <https://doi.org/10.1016/B978-0-12-817630-6.00003-5>;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
+  skos:broader ditta:ModelSystem;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Rule Model"@en .
 
 ditta:SystemFunctionality a skos:Concept;
   skos:broader ditta:DigitalTwinType;
@@ -348,3 +386,23 @@ ditta:DigitalTwinAggregate a skos:Concept;
   skos:definition "Digital Twin Aggregate, the aggregation of all the DTIs or all the products that have been built."@en;
   skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
   skos:prefLabel "Digital Twin Aggregate"@en .
+
+ditta:ConceptualModelDimensionality a skos:Concept;
+  skos:broader ditta:DigitalTwinType;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:narrower ditta:Five-dimensionalDigitalTwin, ditta:Three-dimensionalDigitalTwin;
+  skos:prefLabel "Conceptual Model Dimensionality"@en .
+
+ditta:Three-dimensionalDigitalTwin a skos:Concept;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
+  skos:broader ditta:ConceptualModelDimensionality;
+  skos:exactMatch ditta:DigitalTwinConceptualModel;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Three-dimensional Digital Twin"@en .
+
+ditta:Five-dimensionalDigitalTwin a skos:Concept;
+  dct:creator <https://orcid.org/0000-0002-9020-0633>;
+  skos:broader ditta:ConceptualModelDimensionality;
+  skos:definition "A five-dimensional digital twin destinguishes between models, data, and service concepts instead of a single term for a digital representation in the Digital Twin Conceptual Model."@en;
+  skos:inScheme <https://www.rtdt.ai/ontologies/digital-twin-taxonomy/>;
+  skos:prefLabel "Five-dimensional Digital Twin"@en .
