@@ -2,6 +2,8 @@
 
 A taxonomical organisation of digital twin conceptual models with a SKOS data model. 
 
+View [DiTTa](https://technoportal.hevs.ch/ontologies/DITTA) on the TechnoPortal.
+
 Cite as:
 ```
 @misc{marykovskiy_2023_8021787,
