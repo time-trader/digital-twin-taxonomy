@@ -21,11 +21,11 @@
   dct:contributor <https://orcid.org/0000-0002-6570-6966>;
   dct:creator <https://orcid.org/0000-0002-6570-6966>;
   dct:description "A taxonomical organization of digital twin system concepts and digital twin types"@en;
-  dct:hasVersion "0.0.4"@en;
+  dct:hasVersion "0.0.5"@en;
   dct:license <http://creativecommons.org/licenses/by/4.0/>;
   dct:publisher "OST - Ostschweizer Fachhochschule"@en;
   dct:title "Digital Twin Taxonomy"@en;
-  owl:versionInfo "0.0.4"@en;
+  owl:versionInfo "0.0.5"@en;
   skos:hasTopConcept ditta:DigitalTwinConceptualModel, ditta:DigitalTwinType;
   skos:prefLabel "Digital Twin Taxonomy"@en .
 
