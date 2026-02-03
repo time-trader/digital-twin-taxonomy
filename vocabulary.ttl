@@ -133,6 +133,7 @@ ditta:SystemFunctionality a skos:Concept;
 
 ditta:SupervisoryDigitalTwin a skos:Concept;
   skos:broader ditta:SystemFunctionality;
+  skos:closeMatch ditta:1-DescriptiveDigitalTwin, ditta:L1DescriptiveDigitalTwin;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:narrower ditta:OperationalDigitalTwin;
   skos:prefLabel "Supervisory Digital Twin"@en .
@@ -141,6 +142,7 @@ ditta:OperationalDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:broader ditta:SupervisoryDigitalTwin;
+  skos:closeMatch ditta:2-DiagnosticDigitalTwin, ditta:L2InformativeDigitalTwin;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:narrower ditta:Simulation-PredictionDigitalTwin;
   skos:prefLabel "Operational Digital Twin"@en .
@@ -149,6 +151,7 @@ ditta:Simulation-PredictionDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:broader ditta:OperationalDigitalTwin;
+  skos:closeMatch ditta:3-PredictiveDigitalTwin, ditta:L3PredictiveDigitalTwin;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:narrower ditta:Intelligent-LearningDigitalTwin;
   skos:prefLabel "Simulation - Prediction Digital Twin"@en .
@@ -158,6 +161,7 @@ ditta:Intelligent-LearningDigitalTwin a skos:Concept;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:altLabel "Data-Driven Digital Twin"@en;
   skos:broader ditta:Simulation-PredictionDigitalTwin;
+  skos:closeMatch ditta:4-PrescriptiveDigitalTwin, ditta:IntelligentDigitalTwin, ditta:L4LivingDigitalTwin;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:narrower ditta:AutonomousDigitalTwin;
   skos:prefLabel "Intelligent - Learning Digital Twin"@en .
@@ -166,6 +170,8 @@ ditta:AutonomousDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1115/1.4046739>;
   dct:creator <https://orcid.org/0000-0002-7266-2105>;
   skos:broader ditta:Intelligent-LearningDigitalTwin;
+  skos:closeMatch ditta:CognitiveDigitalTwin, ditta:IntelligentDigitalTwin, ditta:L4LivingDigitalTwin;
+  skos:exactMatch ditta:5-AutonomousDigitalTwin;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:prefLabel "Autonomous Digital Twin"@en .
 
@@ -174,6 +180,7 @@ ditta:CognitiveDigitalTwin a skos:Concept;
   dct:creator <https://orcid.org/0000-0001-5044-2921>, <https://orcid.org/0000-0003-3660-9187>;
   dct:references <https://doi.org/10.1007/978-3-030-19651-6_3>;
   skos:broader ditta:SystemFunctionality;
+  skos:closeMatch ditta:AutonomousDigitalTwin, ditta:L4LivingDigitalTwin;
   skos:definition "DTs with augmented semantic capabilities for identifying the dynamics of virtual model evolution, promoting the understanding of interrelationships between virtual models and enhancing the decision-making"@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:prefLabel "Cognitive Digital Twin"@en .
@@ -204,6 +211,8 @@ ditta:L3PredictiveDigitalTwin a skos:Concept;
 
 ditta:L4LivingDigitalTwin a skos:Concept;
   skos:broader ditta:L3PredictiveDigitalTwin;
+  skos:closeMatch ditta:5-AutonomousDigitalTwin, ditta:AutonomousDigitalTwin, ditta:CognitiveDigitalTwin,
+    ditta:Intelligent-LearningDigitalTwin, ditta:IntelligentDigitalTwin;
   skos:definition "An L4 Living Digital Twin focuses on modeling the behavior of the physical system as it changes over time by using real-world data to update the model parameters."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:prefLabel "L4 Living Digital Twin"@en .
@@ -222,6 +231,7 @@ ditta:1-DescriptiveDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
   dct:creator <https://orcid.org/0009-0003-5155-0870>;
   skos:broader ditta:0-StandaloneDigitalTwin;
+  skos:closeMatch ditta:L1DescriptiveDigitalTwin, ditta:SupervisoryDigitalTwin;
   skos:definition "When geometric computer-aided design (CAD) models are in place and a live sensor data stream is established, it can be referred to as the descriptive DT, which can provide insight into the inner workings of the asset at the required granularity. A descriptive DT mirrors the physical asset’s current state and can be easily explored remotely."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:narrower ditta:2-DiagnosticDigitalTwin;
@@ -231,6 +241,7 @@ ditta:2-DiagnosticDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
   dct:creator <https://orcid.org/0009-0003-5155-0870>;
   skos:broader ditta:1-DescriptiveDigitalTwin;
+  skos:closeMatch ditta:L2InformativeDigitalTwin, ditta:OperationalDigitalTwin;
   skos:definition "At a capability level of 2, data analysis tools are applied to the data for sanity-checks of sensors and data, condition monitoring and fault diagnosis. The DT is referred to as the diagnostic DT."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:narrower ditta:3-PredictiveDigitalTwin;
@@ -240,6 +251,7 @@ ditta:3-PredictiveDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
   dct:creator <https://orcid.org/0009-0003-5155-0870>;
   skos:broader ditta:2-DiagnosticDigitalTwin;
+  skos:closeMatch ditta:L3PredictiveDigitalTwin, ditta:Simulation-PredictionDigitalTwin;
   skos:definition "Predictive DT, as the name suggests, starts exploiting models to project the current and past states into the future. The prediction is continuously updated based on the real-time data stream from the physical asset. With the constant update of the asset state, there is no risk of diverging too far from the physical asset over time."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:narrower ditta:4-PrescriptiveDigitalTwin;
@@ -249,6 +261,8 @@ ditta:4-PrescriptiveDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
   dct:creator <https://orcid.org/0009-0003-5155-0870>;
   skos:broader ditta:3-PredictiveDigitalTwin;
+  skos:closeMatch ditta:Intelligent-LearningDigitalTwin, ditta:IntelligentDigitalTwin,
+    ditta:L4LivingDigitalTwin;
   skos:definition "Prescriptive DTs [...] can make recommendations based on what-if? / risk assessment and uncertainty quantification. This aspect is highly desirable for decision support systems, providing recommendations to experts who then decide how to act upon them."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:narrower ditta:5-AutonomousDigitalTwin;
@@ -258,7 +272,9 @@ ditta:5-AutonomousDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.1109/ACCESS.2023.3321320>;
   dct:creator <https://orcid.org/0009-0003-5155-0870>;
   skos:broader ditta:4-PrescriptiveDigitalTwin;
+  skos:closeMatch ditta:CognitiveDigitalTwin, ditta:IntelligentDigitalTwin, ditta:L4LivingDigitalTwin;
   skos:definition "The DT and the digital asset start bidirectional communication where the physical asset updates its DT in real-time, and in return, the DT controls the asset to push it towards an optimal set point. Decisions can be made on much shorter timescales than with human involvement. This autonomous DT represents the fifth level."@en;
+  skos:exactMatch ditta:AutonomousDigitalTwin;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:prefLabel "Autonomous Digital Twin"@en .
 
@@ -266,6 +282,8 @@ ditta:IntelligentDigitalTwin a skos:Concept;
   dct:bibliographicCitation <https://doi.org/10.12688/digitaltwin.17574.1>;
   dct:creator <https://orcid.org/0000-0003-0322-343X>;
   skos:broader ditta:SystemFunctionality;
+  skos:closeMatch ditta:4-PrescriptiveDigitalTwin, ditta:5-AutonomousDigitalTwin, ditta:AutonomousDigitalTwin,
+    ditta:Intelligent-LearningDigitalTwin, ditta:L4LivingDigitalTwin;
   skos:definition "The Intelligent Digital Twin is active, online, goal seeking, and anticipatory."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:prefLabel "Intelligent Digital Twin"@en .
@@ -319,22 +337,37 @@ ditta:FullyCoupledDigitalTwin a skos:Concept;
 ditta:ModelFidelity a skos:Concept;
   skos:broader ditta:DigitalTwinType;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
-  skos:narrower ditta:HighFidelityDigitalTwin, ditta:LowFidelityDigitalTwin, ditta:Multi-FidelityDigitalTwin;
+  skos:narrower ditta:HighFidelityDigitalTwin, ditta:LowFidelityDigitalTwin, ditta:MediumFidelityDigitalTwin,
+    ditta:Multi-FidelityDigitalTwin;
   skos:prefLabel "Model Fidelity"@en;
   skos:related ditta:ModelSystem .
 
 ditta:LowFidelityDigitalTwin a skos:Concept;
   skos:broader ditta:ModelFidelity;
+  skos:definition "A Low Fidelity Digital Twin is a Digital Twin whose Model System uses a high level of abstraction (e.g. coarse geometry and/or simplified behavior), representing a limited subset of parameters/states with approximate relationships. It is typically intended for qualitative insight, basic monitoring, visualization, early development/testing, or decision support where directionally-correct behavior is sufficient."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
+  skos:note "What counts as “low” depends on the domain and decision being supported (e.g., dashboarding vs safety-critical prediction). “Fidelity” is commonly framed in terms of parameter coverage, accuracy, and abstraction level."@en;
   skos:prefLabel "Low Fidelity Digital Twin"@en .
+
+ditta:MediumFidelityDigitalTwin a skos:Concept;
+  skos:broader ditta:ModelFidelity;
+  skos:definition "A Medium Fidelity Digital Twin is a Digital Twin whose Model System captures the dominant structure and behaviors needed for the target decisions, using a moderate number of parameters and moderate resolution. It often combines first-principles or reduced-order models with operational data to achieve usable quantitative accuracy within a defined operating envelope, while keeping computational and data requirements manageable."@en;
+  skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
+  skos:note "“Medium” is not universally standardized. It is best treated as the middle band between low and high where added realism produces decision value, but exhaustive detail is not justified (cost/latency/maintainability)."@en;
+  skos:prefLabel "Medium Fidelity Digital Twin"@en .
 
 ditta:HighFidelityDigitalTwin a skos:Concept;
   skos:broader ditta:ModelFidelity;
+  skos:definition "A High Fidelity Digital Twin is a Digital Twin whose Models System captures Physical System’s relevant charachtersitcs and behavior with high precision, using detailed parameterization, high-resolution state representation, and often multi-physics and probabilistic modeling. It is typically calibrated/validated against observations and supports quantitative prediction, optimization, and, in some contexts, closed-loop decision support."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
+  skos:note """“High” should be defined relative to required accuracy, risk, and operating envelope; standards emphasize fit-for-purpose rather than “max fidelity always.”
+
+An example of canonical high-fidelity framing in aerospace domain proposed by E. H. Glaessgen & D. S. Stargel (NASA) describes a High Fidelity Digital Twin as an integrated multiphysics, multiscale, probabilistic simulation using best available models and sensor updates to mirror the life of its physical counterpart, which is explicitly “ultra-realistic.”"""@en;
   skos:prefLabel "High Fidelity Digital Twin"@en .
 
 ditta:Multi-FidelityDigitalTwin a skos:Concept;
   skos:broader ditta:ModelFidelity;
+  skos:definition "A Multi-Fidelity Digital Twin is a Digital Twin whose Model System employs two or more linked models (or model components) at different fidelity levels such that the twin can switch between, combine, or adaptively refine fidelity to meet the needs of specific decisions under constraints like accuracy, latency, and computational/data cost."@en;
   skos:inScheme <https://www.w3id.org/ontoforge/digital-twin-taxonomy/>;
   skos:prefLabel "Multi-Fidelity Digital Twin"@en .
 
